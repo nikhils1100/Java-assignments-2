@@ -1,4 +1,4 @@
-package com.example.bookCrud.Dao.Generics;
+package com.example.bookCrud.Dao;
 
 import com.example.bookCrud.Model.Book;
 
@@ -14,4 +14,5 @@ public interface IBookDao {
     void delete(Book entity);
 
     void deleteById(long entityId);
+
 }

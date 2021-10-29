@@ -19,5 +19,7 @@
 
         <!-- Names the annotated entity class -->
         <mapping class="com.example.bookCrud.Model.Book"/>
+        <mapping class="com.example.bookCrud.Model.User"/>
+        <mapping class="com.example.bookCrud.Model.Sales"/>
     </session-factory>
 </hibernate-configuration>
