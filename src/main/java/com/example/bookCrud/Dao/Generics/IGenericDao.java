@@ -6,7 +6,7 @@ import java.util.List;
 public interface IGenericDao<T extends Serializable> {
     void setClazz(Class< T > clazzToSet);
 
-    T findOne(final long id);
+    T findOne(final int id);
 
     List<T> findAll();
 
@@ -16,5 +16,5 @@ public interface IGenericDao<T extends Serializable> {
 
     void delete(final T entity);
 
-    void deleteById(final long entityId);
+    void deleteById(final int entityId);
 }

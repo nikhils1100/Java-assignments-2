@@ -5,7 +5,7 @@ import com.example.bookCrud.Model.Book;
 import java.util.List;
 
 public interface IBookDao {
-    Book findOne(long id);
+    Book findOne(int id);
 
     List<Book> findAll();
 
@@ -13,6 +13,6 @@ public interface IBookDao {
 
     void delete(Book entity);
 
-    void deleteById(long entityId);
+    void deleteById(int entityId);
 
 }

@@ -5,7 +5,7 @@ import com.example.bookCrud.Model.Sales;
 import java.util.List;
 
 public interface ISalesDao {
-    Sales findOne(long id);
+    Sales findOne(int id);
 
     List<Sales> findAll();
 
@@ -13,5 +13,5 @@ public interface ISalesDao {
 
     void delete(Sales entity);
 
-    void deleteById(long entityId);
+    void deleteById(int entityId);
 }

@@ -11,6 +11,10 @@
         <property name="connection.username">nik_book</property>
         <property name="connection.password">password</property>
 
+        <property name="hibernate.current_session_context_class">
+            org.hibernate.context.internal.ThreadLocalSessionContext
+        </property>
+
         <!-- SQL dialect -->
         <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
 

@@ -6,7 +6,7 @@ import com.example.bookCrud.Model.User;
 import java.util.List;
 
 public interface IUserDao {
-    User findOne(long id);
+    User findOne(int id);
 
     List<User> findAll();
 
@@ -14,5 +14,5 @@ public interface IUserDao {
 
     void delete(User entity);
 
-    void deleteById(long entityId);
+    void deleteById(int entityId);
 }
