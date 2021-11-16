@@ -8,12 +8,12 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-@Configuration
+//@Configuration
 public class HibernateUtil {
     private static StandardServiceRegistry registry;
     private static SessionFactory sessionFactory;
 
-    @Bean
+//    @Bean
     public static SessionFactory getSessionFactory() {
         if (sessionFactory == null) {
             try {
