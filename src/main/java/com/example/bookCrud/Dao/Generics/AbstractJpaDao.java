@@ -2,43 +2,49 @@ package com.example.bookCrud.Dao.Generics;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
 import java.io.Serializable;
 import java.util.List;
 
 public abstract class AbstractJpaDao<T extends Serializable> {
     private Class<T> clazz;
-
-    @PersistenceContext
     private EntityManager entityManager;
+
+    public AbstractJpaDao(EntityManager em){
+        entityManager = em;
+    }
 
     public final void setClazz(final Class<T> clazzToSet) {
         this.clazz = clazzToSet;
     }
 
+    @Transactional
     public T findOne(final int id) {
         return entityManager.find(clazz, id);
     }
 
+    @Transactional
     public List<T> findAll() {
-        System.out.println(entityManager);
         return entityManager.createQuery("from " + clazz.getName()).getResultList();
     }
-
+    @Transactional
     public void create(final T entity) {
         entityManager.persist(entity);
     }
-
+    @Transactional
     public T update(final T entity) {
-        return entityManager.merge(entity);
+        T result = entityManager.merge(entity);
+        return result;
     }
-
+    @Transactional
     public void delete(final T entity) {
         entityManager.remove(entity);
     }
-
+    @Transactional
     public void deleteById(final int entityId) {
         final T entity = findOne(entityId);
-        delete(entity);
+        if(entity!=null)
+            delete(entity);
     }
 
 }
